@@ -2,6 +2,19 @@
 
 // https://dart.dev/language
 
+//  import 'package:'
+/*
+
+// Importing core libraries
+import 'dart:math';
+
+// Importing libraries from external packages
+import 'package:test/test.dart';
+
+// Importing files
+import 'path/to/my_other_file.dart';
+*/
+
 
 void main() {
 
@@ -59,7 +72,7 @@ void main() {
   const double atm = 1.01325 * bar; // Standard atmosphere
 
 
-
+  print(year);
   // ControlFLow
   if (year >= 2001) {
     print('21st Century');
@@ -77,12 +90,64 @@ void main() {
     print(month);
   }
 
-  print('Years 2016')
-;  while (year < 2016) {
+  print('Years 2016');
+  while (year < 2016) {
     print(year);
     year ++;
   }
+
+  print("Functions");
+  int fib = 20;
+  int result = fibonacci(fib);
+  print('Fibonacci $fib = $result');
+
+  // A shorthand => (arrow) syntax is handy for functions 
+  // that contain a single statement. This syntax is 
+  // especially useful when passing anonymous functions 
+  // as arguments:
+  
+  print('flyobjects = $flyObjects');
+  //flyObjects.where((element) => false);
+  flyObjects.where((name) => name.contains('turn')).forEach(print);
+
+  // List.where
+  // print list.where
+  print('List.where method');
+  var one = [
+    {'id': 1, 'name': 'jay'},
+    {'id': 2, 'name': 'jay11'},
+    {'id': 13, 'name': 'jay222'}
+  ];
+
+  int newValue = 13;
+
+  print('one = $one');
+  print(one
+      .where((oldValue) => newValue.toString() == (oldValue['id'].toString())));
+
+  ///   This is for documnetation
+  /// More Documentation line 2
+  ///  More Documenattion line 3
+
+
+  var oneRow = one
+      .where((oldValue) => newValue.toString() == (oldValue['id'].toString()));
+
+  print(oneRow);
+  print('The type of oneRow is ${oneRow.runtimeType}');  // WhereIterable<Map<String, Object>>
+  // print(oneRow.['']);
+  // OUTPUT : ({id: 13, name: jay222})
+
+
+
 }
+
+
+int fibonacci(int n) {
+  if (n == 0 || n == 1) return n;
+  return fibonacci(n -1) + fibonacci(n - 2);
+}
+
 
 String readThermometer() {
   return '10';
